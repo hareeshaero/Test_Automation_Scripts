@@ -18,18 +18,10 @@ fi
 echo "creates the output file***************************"
 >./test_bk.txt
 
-if [ ! -f "email_content" ]
-then
-  echo "###############WARNING->File email_content does not exist##############"
-  echo "INFO:Copy of contents of the release email to the file email_content
-  and re run the script"
-  return 
-fi
-
-#Get the input from the server release email"
-less email_content  | cat >> test_bk.txt
+# Get the input from the server release email 
+echo "Release Mail information input to the file***************************"
+python get_mail_temp.py | col -b >> test_bk.txt
 echo $'\n' | cat >> test_bk.txt
-
 
 #inserts the componenet information
 echo "**********Componenet information input to the temp file **********"

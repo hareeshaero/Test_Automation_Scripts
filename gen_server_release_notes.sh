@@ -1,3 +1,4 @@
+################################################################################
 function usage(){
   echo "************************************************"
   echo "execute the script with the following arguements"
@@ -5,6 +6,7 @@ function usage(){
   echo "Example usage : source gen_bk.sh 3.3.18"
   echo "************************************************"
 }
+################################################################################
 
 if [ -z "$1" ]
 then
@@ -44,5 +46,3 @@ echo $'\n' | cat >> test_bk.txt
 echo "**********Changelog information inserted to the output file**********"
 echo $'Changelog:' | cat >> test_bk.txt
 sort -u build/CHANGELOG | cat >> test_bk.txt
-
-echo "less test_bk.txt"
